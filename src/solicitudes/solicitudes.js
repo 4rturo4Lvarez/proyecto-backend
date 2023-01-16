@@ -36,6 +36,19 @@ export const updatePassUser = async (req, res) => {
 
 //=========================================================
 
+//Obtener los datos de un lugar por su codigo
+export const getPlace = async (req, res) => {
+    const connection = await connect();
+    const [rows] = await connection.
+        query('SELECT * FROM Espacios WHERE CODIGO = ?)',
+            [req.params.codigo,]
+        );
+
+    res.json(rows);
+};
+
+//=========================================================
+
 //Obtener un solo usuario por su dni
 export const getPermission = async (req, res) => {
     const connection = await connect();
