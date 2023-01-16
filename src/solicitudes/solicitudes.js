@@ -53,7 +53,7 @@ export const getPlace = async (req, res) => {
 export const getPermission = async (req, res) => {
     const connection = await connect();
     const [rows] = await connection.
-        query('SELECT Espacios_CODIGO FROM Espacios_has_Usuarios WHERE EXISTS (SELECT Espacios_CODIGO FROM Espacios_has_Usuarios WHERE Usuarios_DNI = ?)',
+        query('SELECT Espacios_CODIGO FROM Espacios_has_Usuarios WHERE Usuarios_DNI = ?',
             [req.params.dni,]
         );
 
