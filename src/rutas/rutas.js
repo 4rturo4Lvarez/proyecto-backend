@@ -10,7 +10,7 @@ import {
     getPermission,
     getPlace,
     getPermissionCount,
-} from '../solicitudes/solicitudes';
+} from '../solicitudes/solicitudes.js';
 
 const router = Router()
 

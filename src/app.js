@@ -1,6 +1,8 @@
 import express from 'express';
 
-import usersRoutes from './rutas/rutas';
+import { PUERTO } from './config.js'
+
+import usersRoutes from './rutas/rutas.js';
 
 const app = express();
 
@@ -8,4 +10,5 @@ app.use(express.json());
 
 app.use(usersRoutes);
 
-export default app;
+app.listen(PUERTO)
+console.log("Ejecutandose en el puerto", PUERTO)

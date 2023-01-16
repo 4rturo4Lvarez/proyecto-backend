@@ -1,4 +1,4 @@
-import { connect } from "../database";
+import { connect } from "../database.js";
 
 // Obtener el listado de todos los usuarios
 export const getUsers = async (req, res) => {
