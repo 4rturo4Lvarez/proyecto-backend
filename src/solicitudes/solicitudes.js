@@ -40,7 +40,7 @@ export const updatePassUser = async (req, res) => {
 export const getPlace = async (req, res) => {
     const connection = await connect();
     const [rows] = await connection.
-        query('SELECT * FROM Espacios WHERE CODIGO = ?)',
+        query('SELECT * FROM Espacios WHERE CODIGO = ?',
             [req.params.codigo,]
         );
 
