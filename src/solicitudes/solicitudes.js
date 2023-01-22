@@ -36,6 +36,15 @@ export const updatePassUser = async (req, res) => {
 
 //=========================================================
 
+//Obtener los datos de todos los Espacios
+export const getPlaces = async (req, res) => {
+    const connection = await connect();
+    const [rows] = await connection.
+        query('SELECT * FROM Espacios');
+
+    res.json(rows);
+};
+
 //Obtener los datos de un lugar por su codigo
 export const getPlace = async (req, res) => {
     const connection = await connect();
